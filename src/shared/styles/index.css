@@ -1,0 +1,27 @@
+* {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  line-height: 1.2;
+}
+
+.Main {
+  display: flex;
+  flex-direction: column;
+  margin: 50px 0 0 50px;
+  max-width: 900px;
+}
+
+.Secondary {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid #e1e1e1;
+  border-radius: 8px;
+  padding: 15px;
+}
+
+.Header {
+  display: block;
+  font-size: 20px;
+  font-weight: 400;
+  margin-bottom: 30px;
+}

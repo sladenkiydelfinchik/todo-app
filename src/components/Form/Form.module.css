@@ -1,0 +1,32 @@
+.Form {
+  display: flex;
+  align-items: center;
+  margin-bottom: 90px;
+}
+
+.FormHeader {
+  font-weight: 400;
+  color: #6d6d6d;
+  margin-right: 22px;
+  width: 150px;
+}
+
+.FormInput[type="text"] {
+  border: 1px solid #e1e1e1;
+  width: 100%;
+  height: 46px;
+  border-radius: 8px;
+  margin-right: 22px;
+  padding: 11px;
+}
+
+.FormSubmit {
+  background-color: #1d85ff;
+  border-radius: 8px;
+  color: #ffffff;
+  padding: 14px;
+}
+
+.FormSubmit:hover {
+  background-color: #56a4ff;
+}
