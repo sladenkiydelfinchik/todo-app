@@ -8,7 +8,7 @@ const Form = () => {
                 onSubmit={e => e.preventDefault()}>
                 <span className={styles.FormHeader}>Новая задача</span>
                 <input className={styles.FormInput} type="text" placeholder="Введите текст" />
-                <button className={styles.FormSubmit}> <img src={plusIcon} /> Создать</button>
+                <button className={styles.FormSubmit}> <img src={plusIcon} />Создать</button>
             </form>
         </div>
     );

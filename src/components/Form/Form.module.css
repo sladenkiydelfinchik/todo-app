@@ -25,8 +25,15 @@
   border-radius: 8px;
   color: #ffffff;
   padding: 14px;
+  display: flex;
+  min-width: 117px;
 }
 
 .FormSubmit:hover {
   background-color: #56a4ff;
+}
+
+.FormSubmit img {
+  margin-right: 8px;
+  height: 18px;
 }
