@@ -3,12 +3,14 @@
   flex-wrap: wrap;
   max-width: 50%;
 }
+
 .StatusFilter {
   display: flex;
   margin-right: 18px;
   margin-bottom: 15px;
   align-items: center;
 }
+
 .StatusHeader {
   width: 100%;
   margin-bottom: 15px;
@@ -27,15 +29,19 @@ input[type="radio"] {
   place-content: center;
   color: #808080;
 }
+
 input[type="radio"]::before {
   content: "";
-  width: 14px;
-  height: 14px;
+  width: 12px;
+  height: 12px;
   border-radius: 14px;
   transform: scale(0);
   transition: 120ms transform ease-in-out;
   box-shadow: inset 20px 15px #24a0ed;
 }
+
 input[type="radio"]:checked::before {
   transform: scale(1);
+  outline: 2px solid #24a0ed;
+  outline-offset: 2px;
 }
