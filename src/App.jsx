@@ -8,8 +8,8 @@ import { useState } from "react";
 
 export const App = () => {
     const [tasks, setTasks] = useState([]);
-    function addTask(taskTitle) {
-       console.log(taskTitle);
+
+    const addTask = (taskTitle) => {
        setTasks([
         ...tasks,{
             id: crypto.randomUUID(),
@@ -17,18 +17,26 @@ export const App = () => {
             isCompleted: false
         }
        ])
-       
     };
-    
+
+    const toggleTaskCompletion = (taskId) => {
+        const updatedTasks = tasks.map((task) =>
+            task.id === taskId ? { ...task, completed: !task.completed } : task
+          );
+          setTasks(updatedTasks);
+    }
+
     return (
         <>
         <div className="Main">
-        <Form  handleAddTask = {addTask}/>   
+        <Form
+            handleAddTask = {addTask}/>   
         <h3 className="Header">Список задач</h3>
         <div className="Secondary">
          
         <TaskList 
             tasks={tasks}
+            onComplete={toggleTaskCompletion}
         />
         <StatusList />
         </div>

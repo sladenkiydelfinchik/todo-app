@@ -9,25 +9,36 @@ export const Form = ({ handleAddTask }) => {
         setTitle(event.target.value);
     };
 
-    function handleSubmit(event) {
+    const handleSubmit = (event) => {
         event.preventDefault();
         if (title.trim() === '') return;
         handleAddTask(title);
-       setTitle('');
-      }
-    
+        setTitle('');
+      };
+
     return(
         <>
         <div className={styles.FormWrapper}>
-            <form className={styles.Form} onSubmit={handleSubmit}>
-                <span className={styles.FormHeader}>Новая задача</span>
-                <input 
+            <form 
+            className={styles.Form} 
+            onSubmit={handleSubmit}>
+            
+            <span
+            className={styles.FormHeader}>
+                Новая задача
+            </span>
+            <input 
                 className={styles.FormInput}
                 type="text" 
                 placeholder="Введите текст"
                 onChange={onChangeTitle}
+                value={title}
                 />
-                <button className={styles.FormSubmit} type="submit"> <img src={plusIcon} />Создать</button>
+            <button 
+            className={styles.FormSubmit} 
+            type="submit">
+                <img src={plusIcon} />Создать
+            </button>
             </form>
         </div>
         </>
