@@ -1,0 +1,53 @@
+.TaskListRow {
+  display: flex;
+  flex-direction: row;
+}
+
+.FormControl {
+  display: flex;
+  align-items: center;
+}
+
+input[type="checkbox"] {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0 12px 0 0;
+  font: inherit;
+  width: 24px;
+  height: 24px;
+  border: 0.15em solid;
+  border-radius: 6px;
+  display: grid;
+  place-content: center;
+}
+/* .form-control + .form-control {
+    margin-top: 1em;
+  } */
+
+input[type="checkbox"]::before {
+  content: "";
+  width: 16px;
+  height: 16px;
+  border-radius: 3px;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em #1d85ff;
+}
+input[type="checkbox"]:checked::before {
+  transform: scale(1);
+}
+
+.TaskDelete {
+  background: #ff5858;
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  position: relative;
+}
+.TaskDelete::before {
+  content: url(../../shared/icons/bin.svg);
+  position: absolute;
+  width: 100%;
+  top: 2px;
+  left: 0;
+}

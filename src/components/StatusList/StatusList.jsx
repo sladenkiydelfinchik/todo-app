@@ -1,6 +1,6 @@
 import styles from './StatusList.module.css'
 
-const StatusList = () => {
+export const StatusList = () => {
     return (
         <>
     <div className={styles.StatusList}>
@@ -29,5 +29,3 @@ const StatusList = () => {
       </>
     );
 }
-
-export { StatusList };

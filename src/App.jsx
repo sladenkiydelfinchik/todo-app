@@ -1,10 +1,14 @@
 import { Form } from "./components/Form/Form";
 import { TaskList } from "./components/TaskList/TaskList";
 import { StatusList } from "./components/StatusList/StatusList";
+import { useState } from "react";
 import "./shared/styles/reset.css";
 import "./shared/styles/index.css"
 
-const App = () => {
+
+
+export const App = () => {
+
     return (
         <>
         <div className="Main">
@@ -19,5 +23,3 @@ const App = () => {
         </>
     );
 }
-
-export { App };
