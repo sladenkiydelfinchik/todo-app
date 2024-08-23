@@ -2,12 +2,14 @@
 import { Task } from '../Task/Task';
 
 
-export const TaskList = () => {
+export const TaskList = ({ tasks }) => {
     return (
         <div className={styles.TaskListWrapper}>
         <div  className={styles.TaskList} >
-
-        <Task />
+{tasks.map(task => (
+  <Task key={task.id} task={task} />
+))}
+     
         
       </div>
       </div>

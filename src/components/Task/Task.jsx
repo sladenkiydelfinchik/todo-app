@@ -1,12 +1,13 @@
 import styles from './Task.module.css'
 
-export const Task = () => {
+export const Task = ({task}) => {
     return (
         <>
         <div className={styles.TaskListRow}>
         <label className={styles.FormControl}>
           <input type="checkbox" name="checkbox"  />
-         Задача 1
+         <span>{task.title}</span>
+     
         </label>
         <button className={styles.TaskDelete}></button>
         </div></>
