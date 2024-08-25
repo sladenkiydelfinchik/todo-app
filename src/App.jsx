@@ -19,13 +19,18 @@ export const App = () => {
        ])
     };
 
-    const toggleTaskCompletion = (taskId) => {
+    const toggleTaskCompletionById = (taskId) => {
         const updatedTasks = tasks.map((task) =>
-            task.id === taskId ? { ...task, completed: !task.completed } : task
+            task.id === taskId ? { ...task, isCompleted: !task.isCompleted } : task
           );
           setTasks(updatedTasks);
     }
 
+    const deleteTaskById = (taskId) => {
+        const updatedTasks = tasks.filter((task) => 
+            task.id !== taskId);
+        setTasks(updatedTasks);
+      };
     return (
         <>
         <div className="Main">
@@ -36,7 +41,8 @@ export const App = () => {
          
         <TaskList 
             tasks={tasks}
-            onComplete={toggleTaskCompletion}
+            onComplete={toggleTaskCompletionById}
+            onDelete={deleteTaskById}
         />
         <StatusList />
         </div>

@@ -2,7 +2,7 @@
 import { Task } from '../Task/Task';
 
 
-export const TaskList = ({ tasks, toggleTaskCompletion }) => {
+export const TaskList = ({ tasks, onComplete, onDelete }) => {
     return (
       <div className={styles.TaskListWrapper}>
         <div  className={styles.TaskList} >
@@ -10,7 +10,8 @@ export const TaskList = ({ tasks, toggleTaskCompletion }) => {
             <Task
             key={task.id} 
             task={task} 
-            toggleTaskCompletion={toggleTaskCompletion} />
+            onComplete={onComplete}
+            onDelete={onDelete} />
           ))}
         </div>
       </div>
