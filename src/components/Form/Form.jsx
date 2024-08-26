@@ -20,12 +20,11 @@ export const Form = ({ handleAddTask }) => {
         <>
         <div className={styles.FormWrapper}>
             <form 
-            className={styles.Form} 
-            onSubmit={handleSubmit}>
-            
+                className={styles.Form} 
+                onSubmit={handleSubmit}>
             <span
-            className={styles.FormHeader}>
-                Новая задача
+                className={styles.FormHeader}>
+            Новая задача
             </span>
             <input 
                 className={styles.FormInput}
@@ -35,9 +34,10 @@ export const Form = ({ handleAddTask }) => {
                 value={title}
                 />
             <button 
-            className={styles.FormSubmit} 
-            type="submit">
-                <img src={plusIcon} />Создать
+                className={styles.FormSubmit} 
+                type="submit">
+            <img src={plusIcon} />
+            Создать
             </button>
             </form>
         </div>

@@ -11,7 +11,8 @@ export const TaskList = ({ tasks, onComplete, onDelete }) => {
             key={task.id} 
             task={task} 
             onComplete={onComplete}
-            onDelete={onDelete} />
+            onDelete={onDelete}
+            />
           ))}
         </div>
       </div>

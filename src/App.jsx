@@ -30,14 +30,22 @@ export const App = () => {
         const updatedTasks = tasks.map((task) =>
             task.id === taskId ? { ...task, isCompleted: !task.isCompleted } : task
           );
-          setTasks(updatedTasks);
+            setTasks(updatedTasks);
     }
 
     const deleteTaskById = (taskId) => {
-        const updatedTasks = tasks.filter((task) => 
-            task.id !== taskId);
+        const updatedTasks = tasks.filter((task) => task.id !== taskId);
         setTasks(updatedTasks);
       };
+
+    const [statusFilter, setStatusFilter] = useState('all');
+    const filteredTasks = tasks.filter((task) => {
+        if (statusFilter === 'all') return true;
+        if (statusFilter === 'completed') return task.isCompleted;
+        if (statusFilter === 'active') return !task.isCompleted;
+        if (statusFilter === 'uncompleted') return !task.isCompleted;
+        return true;
+      });
     return (
         <>
         <div className="Main">
@@ -47,11 +55,13 @@ export const App = () => {
         <div className="Secondary">
          
         <TaskList 
-            tasks={tasks}
+            tasks={filteredTasks}
             onComplete={toggleTaskCompletionById}
             onDelete={deleteTaskById}
         />
-        <StatusList />
+        <StatusList 
+            statusFilter={statusFilter}
+            setStatusFilter={setStatusFilter}/>
         </div>
         </div>
         </>

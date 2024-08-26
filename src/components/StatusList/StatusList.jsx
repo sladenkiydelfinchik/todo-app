@@ -1,29 +1,49 @@
 import styles from './StatusList.module.css'
 
-export const StatusList = () => {
+export const StatusList = ({statusFilter, setStatusFilter}) => {
     return (
         <>
     <div className={styles.StatusList}>
-      <h3 className={styles.StatusHeader}>Статус</h3>
-    
-
-
-    <label className={styles.StatusFilter}><input type="radio" name="status"/>
+        <h3 className={styles.StatusHeader}>Статус</h3>
+        <label className={styles.StatusFilter}>
+            <input type="radio" 
+            name="status"
+            value="all"
+            checked={statusFilter === 'all'}
+            onChange={() => setStatusFilter('all')}
+            />
         Все
-    </label>
+        </label>
 
-    <label className={styles.StatusFilter}><input type="radio" name="status"/>
+        <label className={styles.StatusFilter}>
+            <input type="radio" 
+            name="status"
+            value="active"
+            checked={statusFilter === 'active'}
+            onChange={() => setStatusFilter('active')}
+            />
         Активные
-    </label>
+        </label>
 
-    <label className={styles.StatusFilter}><input type="radio" name="status"/>
+        <label className={styles.StatusFilter}>
+            <input type="radio" 
+            name="status"
+            value="completed"
+            checked={statusFilter === 'completed'}
+            onChange={() => setStatusFilter('completed')}
+            />
         Завершенные
-    </label>
+        </label>
 
-
-    <label className={styles.StatusFilter}><input type="radio" name="status"/>
+        <label className={styles.StatusFilter}>
+            <input type="radio" 
+            name="status"
+            value="uncompleted"
+            checked={statusFilter === 'uncompleted'}
+            onChange={() => setStatusFilter('uncompleted')}
+            />
         Незавершенные
-    </label>
+        </label>
 
         </div>
       </>
