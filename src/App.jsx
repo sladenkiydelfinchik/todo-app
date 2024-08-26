@@ -3,11 +3,18 @@ import { TaskList } from "./components/TaskList/TaskList";
 import { StatusList } from "./components/StatusList/StatusList";
 import "./shared/styles/reset.css";
 import "./shared/styles/index.css"
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 
 export const App = () => {
-    const [tasks, setTasks] = useState([]);
+    const [tasks, setTasks] = useState(() => {
+        const savedTasks = localStorage.getItem('tasks');
+        return savedTasks ? JSON.parse(savedTasks) : [];
+      });
+
+    useEffect(() => {
+        localStorage.setItem('tasks', JSON.stringify(tasks));
+      }, [tasks]);
 
     const addTask = (taskTitle) => {
        setTasks([
